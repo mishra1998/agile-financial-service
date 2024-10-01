@@ -1,8 +1,5 @@
 const Ajv = require('ajv').default;
 
-// const { MEMBER_TYPE, LOAN_APPLICATION_SUBMITTED_BY } = require('./constant');
-// const Helper = require('./helper');
-
 const ajv = new Ajv({
   verbose: true,
   allErrors: true,
@@ -81,55 +78,6 @@ ajv.addKeyword({
     return !hasDuplicate;
   },
 });
-
-// ajv.addKeyword({
-//   keyword: 'unique-member',
-//   type: 'array',
-//   schemaType: 'boolean',
-//   $data: true,
-//   validate: (schema, data) => {
-//     if (!schema) return true;
-//     const memberList = new Set();
-
-//     const hasDuplicate = data.some((item) => {
-//       if (item.type && item.type !== MEMBER_TYPE.MEMBER && memberList.has(item.type)) {
-//         return true;
-//       }
-//       memberList.add(item.type);
-
-//       return false;
-//     });
-
-//     return !hasDuplicate;
-//   },
-// });
-
-// ajv.addKeyword({
-//   keyword: 'correct-applicant-mobile-number',
-//   type: 'object',
-//   schemaType: 'boolean',
-//   $data: true,
-//   validate: (schema, data) => {
-//     if (!schema) return true;
-
-//     const {
-//       data: { members, profile = {} }, applicantMobileNumber, applicationSubmittedBy, mobileNumber,
-//     } = data;
-
-//     if (applicationSubmittedBy === LOAN_APPLICATION_SUBMITTED_BY.SELF
-//        && mobileNumber === profile.mobileNumber && applicantMobileNumber === profile.mobileNumber) {
-//       return true;
-//     }
-
-//     const memberDetails = (members || []).find((item) => item.type === applicationSubmittedBy) || {};
-
-//     if (memberDetails.mobileNumber === applicantMobileNumber) {
-//       return true;
-//     }
-
-//     return false;
-//   },
-// });
 
 const isValidUuid = (uuid) => {
   /**
