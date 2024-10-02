@@ -23,7 +23,6 @@ module.exports = {
       },
       code: {
         type: DataTypes.STRING,
-        unique: true,
         allowNull: false,
       },
       account_number: {

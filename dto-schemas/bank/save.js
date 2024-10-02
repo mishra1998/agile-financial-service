@@ -1,5 +1,5 @@
 const save = {
-    title: 'save document',
+    title: 'save bank details',
     description: 'Defines the structure for HTTP GET request body',
     type: 'object',
     properties: {

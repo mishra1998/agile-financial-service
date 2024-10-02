@@ -5,7 +5,8 @@ module.exports = (sequelize, DataTypes) => {
         public_id: { 
           type: DataTypes.UUID, 
           unique: true, 
-          allowNull: false },
+          allowNull: false
+        },
         user_id: {
           type: DataTypes.UUID,
           unique: true,
