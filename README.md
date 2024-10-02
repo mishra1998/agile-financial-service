@@ -1,7 +1,3 @@
-├── /api
-│   ├── /bank
-│   │   ├── index.js
-│   │   └── save.js
 ├── /controllers
 │   └── bank.js
 ├── /dto-schemas
